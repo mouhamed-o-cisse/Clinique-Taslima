@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mysqlConnection = require('../db-connection');
-
+ 
 
 //To get all rdvs
 router.get('/get-rdvs', (req, res, next)=>{
