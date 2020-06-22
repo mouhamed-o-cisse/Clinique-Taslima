@@ -1,13 +1,6 @@
 const mySql = require('mysql');
 
-let mySqlConnection = mySql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password:'passwordroot',
-    database: 'clinique-taslima',
-    multipleStatements: true
-
-});
+let mySqlConnection = mySql.createConnection(process.env.CLEARDB_DATABASE_URL);
 
 mySqlConnection.connect((err)=>{
     if(!err){
@@ -19,3 +12,9 @@ mySqlConnection.connect((err)=>{
 })
 
 module.exports = mySqlConnection;
+
+// { 
+    // host: 'localhost',user: 'root', password:'passwordroot', database: 'clinique-taslima',
+    //  multipleStatements: true
+     //CLEARDB_DATABASE_URL
+//  }
