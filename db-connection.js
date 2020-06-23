@@ -16,7 +16,8 @@ const mySql = require('mysql');
   var mySqlConnection;
   
   function handleDisconnect() {
-    mySqlConnection = mySql.createConnection(process.env.CLEARDB_DATABASE_URL); // Recreate the connection, since
+    // mySqlConnection = mySql.createConnection(process.env.CLEARDB_DATABASE_URL);
+    mySqlConnection = mySql.createPool(process.env.CLEARDB_DATABASE_URL); // Recreate the connection, since
                                                     // the old one cannot be reused.
   
     mySqlConnection.connect(function(err) {              // The server is either down
