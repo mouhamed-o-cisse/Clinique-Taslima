@@ -4,7 +4,7 @@ const http = require("http");
 
 
 app.listen(process.env.PORT || 3200, function() {
-  console.log(`App started !, and server running on port:${PORT}`);
+  console.log('App started !');
 })
 
 // const normalizePort = val => {
