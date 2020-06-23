@@ -3,7 +3,7 @@ const debug = require("debug")("node-angular");
 const http = require("http");
 
 
-app.listen(process.env.port || 3000, function() {
+app.listen(process.env.PORT || 3200, function() {
   console.log("App started !");
 })
 
@@ -48,8 +48,12 @@ app.listen(process.env.port || 3000, function() {
 //   debug("Listening on " + bind);
 // };
 
-// const port = normalizePort(process.env.PORT || "3200");
+// const port = normalizePort(process.env.PORT || "3200", function(){
+//   console.log('App started!');
+// });
 // app.set("port", port);
+
+
 
 // const server = http.createServer(app);
 // server.on("error", onError);
