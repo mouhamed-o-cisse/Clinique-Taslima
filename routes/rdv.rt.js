@@ -5,7 +5,7 @@ const mysqlConnection = require('../db-connection');
 
 //To get all rdvs
 router.get('/get-rdvs', (req, res, next)=>{
-   mysqlConnection.query("SELECT * FROM rendez_vous ORDER BY rdv_id DESC ", (err, rows, fields)=>{
+   mysqlConnection.query("SELECT * FROM rdvs ORDER BY rdv_id DESC ", (err, rows, fields)=>{
       if(!err){
           res.send(rows);
       }
@@ -30,7 +30,7 @@ router.get('/get-rdvs', (req, res, next)=>{
 
 //rest api to create a new record into mysql database
 router.post('/add-rdv', function (req, res) { 
-    mysqlConnection.query('INSERT INTO rendez_vous SET speciality=?, firstName=?, lastName=?, phoneNumber=?, \
+    mysqlConnection.query('INSERT INTO rdvs SET speciality=?, firstName=?, lastName=?, phoneNumber=?, \
     date=?, time=?',
         [req.body.speciality, req.body.firstName, req.body.lastName, req.body.phoneNumber, req.body.date,
         req.body.time] , 
