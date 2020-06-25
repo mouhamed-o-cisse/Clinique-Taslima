@@ -31,9 +31,8 @@ router.get('/get-rdvs', (req, res, next)=>{
 //rest api to create a new record into mysql database
 router.post('/add-rdv', function (req, res) { 
     mysqlConnection.query('INSERT INTO rdvs SET speciality=?, firstName=?, lastName=?, phoneNumber=?, \
-    date=?, time=?',
-        [req.body.speciality, req.body.firstName, req.body.lastName, req.body.phoneNumber, req.body.date,
-        req.body.time] , 
+    date=?',
+        [req.body.speciality, req.body.firstName, req.body.lastName, req.body.phoneNumber, req.body.date] , 
          function (error, results, fields) {
              if (error) throw error;      
              console.log(results);
