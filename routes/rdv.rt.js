@@ -8,8 +8,6 @@ router.get('/get-rdvs', (req, res, next)=>{
    mysqlConnection.query("SELECT * FROM rdvs ORDER BY rdv_id DESC ", (err, rows, fields)=>{
       if(!err){
           res.send(rows);
-          res.setHeader('Content-Type', 'application/json');
-          res.end(JSON.stringify(results, null, 3));
       }
       else{
           console.log(err)
